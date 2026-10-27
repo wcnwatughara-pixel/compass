@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Compass Design System - CSS Custom Properties
+   White background, black text, Inter font, minimal and clean
+   ============================================================ */
+
+@theme {
+  /* Background colors */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F5F5F5;
+  --color-bg-tertiary: #EBEBEB;
+
+  /* Text colors */
+  --color-text-primary: #111111;
+  --color-text-secondary: #666666;
+  --color-text-muted: #999999;
+
+  /* UI colors */
+  --color-border: #E0E0E0;
+  --color-accent: #2563EB;
+  --color-accent-light: #DBEAFE;
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-danger: #DC2626;
+
+  /* Typography - using Inter as primary, JetBrains Mono for timer */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent pull-to-refresh on mobile (PWA feel) */
+html {
+  overscroll-behavior: none;
+}
+
+/* Safe area insets for notched phones (iPhone X+, etc.) */
+/* The bottom nav and install prompt need to account for the home indicator */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
