@@ -1,0 +1,1 @@
+(function(){let e=null,t=0;self.onmessage=function(n){let{command:r,initialSeconds:i}=n.data;switch(r){case`start`:typeof i==`number`&&(t=i),e&&clearInterval(e),e=setInterval(()=>{t+=1,self.postMessage({type:`tick`,seconds:t})},1e3);break;case`stop`:e&&=(clearInterval(e),null);break;case`reset`:e&&=(clearInterval(e),null),t=0,self.postMessage({type:`tick`,seconds:0})}}})();
